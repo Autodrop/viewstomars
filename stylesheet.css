@@ -1,0 +1,47 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color:#141852;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+}
+.container {
+  width: 350px;
+  height: 200px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#myProgress{
+  width: 50%;
+
+}
+
+label{
+  color: white;
+  font-family: Roboto;
+
+}
+
+input{
+  height: 25px;
+  border-radius: 15px;
+  border: none;
+  width: 200px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+  padding-left: 15px;
+  margin: 5px;
+}
+
+input:focus {
+  width: 250px;
+  outline: none;
+}
+
