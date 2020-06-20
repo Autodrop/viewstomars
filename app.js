@@ -1,4 +1,3 @@
-
 /* Waarde geven aan progressbalk door input */
 function func() {
   var x = document.getElementById("myProgress");
@@ -15,27 +14,35 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
-/* const YOUTUBE_API_KEY = "AIzaSyDKm9l4BiqkUY_PjA_YYWfhCWNgA45-__g"; */
-
-/* var inputVal = document.getElementById("inputID").value; */
-  
 
 
+function setURL() {
+  url = inputID.value;
+  VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  console.log(url.match(VID_REGEX)[1]);
 
- function setID(){
   $.getJSON(
-  "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + inputID.value + "&key=AIzaSyDoPDFwoLr0xAK66w82LqrMqfAFnfd-jX0",
+    "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + url.match(VID_REGEX)[1] + "&key=AIzaSyC2MigHEEIeECmx6PjX-4R6AqgMiLqesBo",
 
-  function (data) {
-    console.log(data);
+    function (data) {
+      console.log(data);
 
-    $(".inputViews").val(data.items[0].statistics.viewCount);
-  });
-  console.log(inputID.value);  
+      $(".inputViews").val(data.items[0].statistics.viewCount);
+    }
+  );
+
 }
 
 
+/* function setID() {
+  $.getJSON(
+    "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + inputID.value + "&key=AIzaSyC2MigHEEIeECmx6PjX-4R6AqgMiLqesBo",
 
+    function (data) {
+      console.log(data);
 
-
-
+      $(".inputViews").val(data.items[0].statistics.viewCount);
+    }
+  );
+  console.log(inputID.value);
+} */

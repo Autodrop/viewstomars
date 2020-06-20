@@ -17,10 +17,25 @@ body {
   align-items: center;
   flex-direction: column;
 }
+progress{
+  border: none;
+  border-radius: 50px;
+}
+progress::-webkit-progress-bar{
+  background: #95c5fc;
+  border-radius: 50px;
+ 
+}
+
+progress::-webkit-progress-value{
+  background: #4A90E2;
+  border-radius: 50px;
+}
 
 #myProgress{
   width: 50%;
-
+  background-color: #ffd500;
+  
 }
 
 label{
@@ -30,14 +45,27 @@ label{
 }
 
 input{
+  appearance: none;
   height: 25px;
-  border-radius: 15px;
-  border: none;
+  background: transparent;
+  border: 0;
   width: 200px;
   -webkit-transition: width .35s ease-in-out;
   transition: width .35s ease-in-out;
-  padding-left: 15px;
+ padding-left: 10px;
+ padding-right: 10px;
   margin: 5px;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+input::placeholder{
+  color: white;
+  
+  
 }
 
 input:focus {
@@ -45,3 +73,20 @@ input:focus {
   outline: none;
 }
 
+.idButton{
+  background-color: #4A90E2;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.idButton:hover{
+background-color: #3b75b6;
+}
