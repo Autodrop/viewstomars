@@ -86,11 +86,13 @@ progress{
 }
 progress:before {
   content: attr(value);
-  color: aqua;
+  color: #000;
   vertical-align: 0;
   position:absolute;
   left:0;
   right:0;
+  top: 1px;
+  font-family: DINPro-Black;
 }
 progress::-webkit-progress-bar{
   background: #fff;
