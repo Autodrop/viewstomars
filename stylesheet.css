@@ -1,3 +1,35 @@
+
+@font-face {
+  font-family: 'DINPro-Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DINPro Light'), url('DINPro-Light tr.woff') format('woff');
+  }
+  
+  
+  @font-face {
+  font-family: 'DINPro-Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DINPro Medium'), url('DINPro-Medium tr.woff') format('woff');
+  }
+  
+  
+  @font-face {
+  font-family: 'DINPro-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DINPro Bold'), url('DINPro-Bold tr.woff') format('woff');
+  }
+  
+  
+  @font-face {
+  font-family: 'DINPro-Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DINPro Black'), url('DINPro-Black tr.woff') format('woff');
+  }
+
 body {
   width: 100vw;
   height: 100vh;
@@ -7,36 +39,87 @@ body {
   justify-content: center;
   position: relative;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 .container {
-  width: 350px;
+  width: 75%;
   height: 200px;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 100px;
+  
 }
+
+.URLcontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 45px;
+ 
+}
+
+.VIEWScontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.progressdiv{
+  display: flex;
+  
+}
+
 progress{
   border: none;
-  border-radius: 50px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 25px;
+  text-align: center;
+  
+  
+}
+progress:before {
+  content: attr(value);
+  color: aqua;
+  vertical-align: 0;
+  position:absolute;
+  left:0;
+  right:0;
 }
 progress::-webkit-progress-bar{
-  background: #95c5fc;
-  border-radius: 50px;
+  background: #fff;
+  transition: 1s ease-in-out;
+  ;
  
 }
 
 progress::-webkit-progress-value{
-  background: #4A90E2;
-  border-radius: 50px;
+  background: #919191;
+  transition: 1s ease-in-out;
 }
+/* progress[value]::-webkit-progress-value::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 100%;
+  right: 7px;
+  top: 7px;
+  background-color: white
+ 
+} */
 
-#myProgress{
-  width: 50%;
+/* #myProgress{
+  width: 75%;
   background-color: #ffd500;
   
-}
+} */
 
 label{
   color: white;
@@ -49,7 +132,7 @@ input{
   height: 25px;
   background: transparent;
   border: 0;
-  width: 200px;
+  width: 400px;
   -webkit-transition: width .35s ease-in-out;
   transition: width .35s ease-in-out;
  padding-left: 10px;
@@ -58,8 +141,9 @@ input{
   border-bottom: 1px solid white;
   color: white;
   font-size: 16px;
-  font-family: Roboto;
-  font-weight: 300;
+  font-family: DINPro-Light;
+  text-align: center;
+ 
 }
 
 input::placeholder{
@@ -69,24 +153,32 @@ input::placeholder{
 }
 
 input:focus {
-  width: 250px;
+  width: 450px;
   outline: none;
 }
 
 .idButton{
-  background-color: #4A90E2;
-  border: none;
+  background-color: transparent;
+  border: 2px solid #fff;
   color: white;
-  padding: 10px 32px;
+  padding: 15px 45px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 14px;
+  margin: 30px 0 0;
   cursor: pointer;
-  border-radius: 20px;
+  min-width: 130px;
+  font-weight: 700;
+  font-family: DINPro-Bold;
+  box-shadow: inset 0px 0px 0px #2F3B47;
+transition: all 0.45s !important;
+  
 }
 
 .idButton:hover{
-background-color: #3b75b6;
+color: #000;
+box-shadow: inset 0px -80px 0px #fff;
 }
+
+
