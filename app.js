@@ -15,18 +15,20 @@ input.addEventListener("keyup", function (event) {
 });
 
 
-
+/* Video ID uit URL halen om aan te roepen in API */
 function setURL() {
   url = inputID.value;
   VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
   console.log(url.match(VID_REGEX)[1]);
 
+ /* Zorgt voor de API call met de video ID en de persoonlijke API key */ 
   $.getJSON(
     "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" + url.match(VID_REGEX)[1] + "&key=AIzaSyC2MigHEEIeECmx6PjX-4R6AqgMiLqesBo",
 
     function (data) {
       console.log(data);
 
+  /* Zorgt ervoor dat het weergave aantal uit de API data array wordt gehaald en in het inputveld wordt gezet */ 
       $(".inputViews").val(data.items[0].statistics.viewCount);
     }
   );
