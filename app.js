@@ -35,6 +35,14 @@ function setURL() {
 
 }
 
+/* Embed de video en speelt automatisch af na klikken "BEKIJK WEERGAVEN" */
+$("body").on("click", "#idKnop", function () {
+  var url = $("#inputID").val();
+  url = url.split('v=')[1];
+  $("#video")[0].src = "https://www.youtube.com/embed/" + url + "?autoplay=1";
+  $("#video").show();
+});
+
 
 
 /* function setID() {
